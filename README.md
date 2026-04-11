@@ -1,6 +1,6 @@
 # Northwind Drone Navigation Library
 
-**Version 1.1.0**
+**Version 1.1.1**
 
 A comprehensive Python library for autonomous drone navigation and control systems, featuring AI-powered decision making, obstacle avoidance, and real-time stability control.
 

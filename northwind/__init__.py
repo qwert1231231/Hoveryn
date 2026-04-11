@@ -1,7 +1,7 @@
 # Northwind Drone Navigation Library
 # A comprehensive library for drone navigation, obstacle avoidance, stability control, mission management, AI decision making, and data logging.
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 
 from . import navigation
 from . import obstacle_handling
