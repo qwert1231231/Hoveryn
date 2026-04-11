@@ -1,5 +1,7 @@
 # Northwind Drone Navigation Library
 
+**Version 1.1.0**
+
 A comprehensive Python library for autonomous drone navigation and control systems, featuring AI-powered decision making, obstacle avoidance, and real-time stability control.
 
 ## Features
@@ -35,8 +37,16 @@ A comprehensive Python library for autonomous drone navigation and control syste
 
 ## Installation
 
+Install the latest release from PyPI:
+
 ```bash
-pip install git+https://github.com/qwert1231231/northwind.git
+pip install --upgrade northwind
+```
+
+Install the current repository version from GitHub:
+
+```bash
+pip install --upgrade git+https://github.com/qwert1231231/northwind.git
 ```
 
 Or clone and install locally:
@@ -83,4 +93,5 @@ MIT License - see LICENSE file for details.
 
 ## Repository
 
-[https://github.com/qwert1231231/northwind](https://github.com/qwert1231231/northwind)
+- GitHub: [https://github.com/qwert1231231/northwind](https://github.com/qwert1231231/northwind)
+- PyPI: [https://pypi.org/project/northwind/](https://pypi.org/project/northwind/)

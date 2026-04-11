@@ -38,6 +38,12 @@ def main():
     northwind.pause_mission()
     northwind.return_home()
 
+    # Short mission API demo
+    print("\n7. Short mission API:")
+    drone = northwind.Drone()
+    drone.fly([(0.0, 0.0), (37.7749, -122.4194)])
+    drone.home()
+
     # AI decision demo
     print("\n5. AI Decision:")
     action = northwind.choose_action('obstacle_detected')
