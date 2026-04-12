@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "northwind"
-version = "1.1.2"
-description = "Drone Navigation Library with AI capabilities"
+version = "1.2.2"
+description = "Lightweight drone helper code and experiments"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -21,6 +21,10 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = []
+
+[project.optional-dependencies]
+gpio = ["RPi.GPIO>=0.7.0"]
+gps = ["gpsd-py3>=0.3.0"]
 
 [project.urls]
 Homepage = "https://github.com/qwert1231231/northwind"

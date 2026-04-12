@@ -1,36 +1,36 @@
 # Northwind Drone Navigation Library
 
-**Version 1.1.2**
+**Version 1.2.2**
 
-A comprehensive Python library for autonomous drone navigation and control systems, featuring AI-powered decision making, obstacle avoidance, real-time stability control, and advanced PWM motor speed control for ESP32/Arduino/drone hardware.
+A lightweight set of helper modules and experiments for drone-style navigation, obstacle handling, and stability logic. This is not a full autopilot system — it is more of a code sketch for testing ideas and learning.
 
 ## Features
 
-### 1. Navigation (Powerful Brain)
-- `set_destination(lat, lon)` - Set navigation destination coordinates
-- `calculate_route(start, end)` - Calculate optimal flight route
-- `update_position()` - Update current drone position from sensors
+### 1. Navigation (Location and route math)
+- `set_target_coordinate(lat, lon)` - Save a GPS destination coordinate
+- `plan_flight_path(start, end)` - Build a waypoint route from start to end
+- `refresh_position()` - Simulate a GPS/IMU position update
 
 ### 2. Obstacle Handling (Critical)
-- `detect_obstacle(sensor_data)` - Detect obstacles using sensor data
-- `avoid_obstacle(direction)` - Execute obstacle avoidance maneuvers
-- `recalculate_path()` - Recalculate path around detected obstacles
+- `scan_for_obstacle(sensor_data)` - Check sensor inputs for nearby obstacles
+- `execute_avoidance(direction)` - Perform a basic obstacle avoidance maneuver
+- `reroute_path()` - Rebuild the route after avoiding an obstacle
 
 ### 3. Stability / Correction (Real Drone Behavior)
-- `correct_drift(gps_error)` - Correct GPS positioning drift
+- `correct_gps_drift(gps_error)` - Correct a GPS drift estimate
 - `adjust_altitude(wind_data)` - Adjust altitude based on wind conditions
-- `hold_position()` - Maintain stable hover position
+- `engage_hover_hold()` - Hold position using stabilization control
 
 ### 4. Mission Control
-- `start_mission()` - Begin autonomous mission
-- `pause_mission()` - Pause current mission execution
+- `start_mission()` - Begin a mission sequence
+- `pause_mission()` - Pause the current mission
 - `return_home()` - Return to home position safely
 
-### 5. Simple AI Decision Layer
-- `choose_action(state)` - Choose optimal action based on current state
-- `predict_next_move()` - Predict next optimal move using AI
+### 5. Decision Helpers
+- `choose_action(state)` - Choose the next action based on current state
+- `predict_next_move()` - Predict the next move using simple logic
 
-### 6. Data Logging (For Learning + Cloud)
+### 6. Data Logging (For Learning)
 - `log_flight_data()` - Log flight telemetry and sensor data
 - `export_data()` - Export logged data to JSON files
 - `send_to_cloud()` - Upload data to cloud storage for analysis
@@ -63,19 +63,19 @@ pip install -e .
 import northwind
 
 # Set destination coordinates
-northwind.set_destination(37.7749, -122.4194)  # San Francisco
+northwind.set_target_coordinate(37.7749, -122.4194)  # San Francisco
 
 # Start autonomous mission
 northwind.start_mission()
 
 # Hardware motor control
-northwind.set_hardware_device('esp32')
-northwind.set_motor_speed(75)  # percent of full PWM range
+northwind.configure_motor_profile('esp32')
+northwind.set_motor_speed_percent(75)  # percent of full PWM range
 northwind.ramp_motor_speed(90, step=10, delay=0.1)
-status = northwind.get_motor_status()
+status = northwind.read_motor_status()
 print(status)
 
-# AI decision making
+# Decision helpers
 action = northwind.choose_action('normal')
 next_move = northwind.predict_next_move()
 
@@ -93,7 +93,7 @@ Supported device profiles:
 - `arduino` — Arduino PWM driver profile
 - `drone` — Generic drone ESC PWM profile
 
-Use `set_hardware_device(...)` to choose the device type, then control speed with `set_motor_speed(...)` or `set_motor_speed_pwm(...)`.
+Use `configure_motor_profile(...)` to choose the device type, then control speed with `set_motor_speed_percent(...)` or `set_motor_pwm(...)`.
 
 ## Requirements
 

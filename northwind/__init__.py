@@ -1,7 +1,7 @@
 # Northwind Drone Navigation Library
-# A comprehensive library for drone navigation, obstacle avoidance, stability control, mission management, AI decision making, and data logging.
+# Lightweight helper code for drone-style navigation, obstacle handling, and stability experiments.
 
-__version__ = "1.1.2"
+__version__ = "1.2.2"
 
 from . import navigation
 from . import obstacle_handling
@@ -10,12 +10,17 @@ from . import mission_control
 from . import ai_decision
 from . import data_logging
 from . import motors
+from . import hal
+from . import flight_control
+from . import sensor_fusion
 
 # Import functions to package level for convenience
 from .navigation import set_destination, calculate_route, update_position
-from .obstacle_handling import detect_obstacle, avoid_obstacle, recalculate_path
-from .stability import correct_drift, adjust_altitude, hold_position
+from .obstacle_handling import scan_for_obstacle, execute_avoidance, reroute_path
+from .stability import correct_drift, hold_position
+from .actions import adjust_altitude
 from .mission_control import (
+    Mission,
     Drone,
     quick_mission,
     quick_launch,
@@ -23,7 +28,6 @@ from .mission_control import (
     home,
     initialize_system,
     calibrate_sensors,
-    set_flight_mode,
     define_mission,
     validate_mission,
     estimate_battery_usage,
@@ -52,9 +56,31 @@ from .motors import (
     set_hardware_device,
     set_motor_speed,
     set_motor_speed_pwm,
+    set_motor_speeds,
+    calibrate_esc,
     ramp_motor_speed,
     stop_motor,
     get_motor_status,
+)
+from .hal import FlightControllerHAL, SimulatedHAL
+from .flight_control import FlightControlSystem
+from .sensor_fusion import SensorFusion
+from .actions import (
+    set_target_coordinate,
+    plan_flight_path,
+    refresh_position,
+    scan_for_obstacle as action_scan_for_obstacle,
+    execute_avoidance as action_execute_avoidance,
+    reroute_path as action_reroute_path,
+    correct_gps_drift,
+    adjust_altitude as action_adjust_altitude,
+    engage_hover_hold,
+    configure_motor_profile,
+    set_motor_pwm,
+    set_motor_speed_percent,
+    ramp_motor_speed as action_ramp_motor_speed,
+    stop_motor as action_stop_motor,
+    read_motor_status,
 )
 
 __all__ = [
@@ -114,4 +140,24 @@ __all__ = [
     "ramp_motor_speed",
     "stop_motor",
     "get_motor_status",
+    "set_motor_speeds",
+    "calibrate_esc",
+    "FlightControllerHAL",
+    "SimulatedHAL",
+    "FlightControlSystem",
+    "SensorFusion",
+    "Mission",
+    "set_target_coordinate",
+    "plan_flight_path",
+    "refresh_position",
+    "scan_for_obstacle",
+    "execute_avoidance",
+    "reroute_path",
+    "correct_gps_drift",
+    "adjust_altitude",
+    "engage_hover_hold",
+    "configure_motor_profile",
+    "set_motor_pwm",
+    "set_motor_speed_percent",
+    "read_motor_status",
 ]
