@@ -1,5 +1,5 @@
 """
-Real Hardware Driver Layer for Northwind
+Real Hardware Driver Layer for Hoveryn
 
 Provides actual hardware control for:
 - Arduino (via PySerial)

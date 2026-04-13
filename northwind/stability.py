@@ -1,5 +1,5 @@
 """
-Stability and correction module for Northwind drone library.
+Stability and correction module for Hoveryn drone library.
 Implements PID attitude control and position holding behavior.
 """
 

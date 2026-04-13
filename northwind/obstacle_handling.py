@@ -1,5 +1,5 @@
 """
-Obstacle handling module for Northwind drone library.
+Obstacle handling module for Hoveryn drone library.
 Manages obstacle detection and avoidance with sensor-driven hardware input.
 """
 

@@ -1,4 +1,4 @@
-"""Flight control for Northwind drone systems."""
+"""Flight control for Hoveryn drone systems."""
 
 import math
 from dataclasses import dataclass

@@ -1,5 +1,5 @@
 """
-Decision module for Northwind drone library.
+Decision module for Hoveryn drone library.
 Uses rule-based logic for mission and obstacle handling.
 """
 

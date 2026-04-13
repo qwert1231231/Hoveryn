@@ -1,5 +1,5 @@
 """
-Advanced Flight Control Module for Northwind
+Advanced Flight Control Module for Hoveryn
 
 Provides high-level drone control functions including connection management,
 telemetry monitoring, flight control, mission planning, and safety systems.
@@ -13,7 +13,7 @@ This module bridges simulation (for testing) with real hardware control.
 Real telemetry is read from actual sensors via I2C, SPI, PWM, and serial.
 
 Example with real hardware:
-    from northwind.advanced import VehicleController
+    from Hoveryn.advanced import VehicleController
     
     controller = VehicleController(platform='raspberry_pi')
     controller.connect()  # Real hardware connection

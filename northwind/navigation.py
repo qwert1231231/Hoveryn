@@ -1,5 +1,5 @@
 """
-Navigation module for Northwind drone library.
+Navigation module for Hoveryn drone library.
 Handles destination setting, route planning, and hardware-driven navigation.
 """
 

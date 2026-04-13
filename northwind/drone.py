@@ -1,11 +1,11 @@
 """
-Simplified Drone Shortcut Module for Northwind
+Simplified Drone Shortcut Module for Hoveryn
 
 Provides direct access to drone control functions without the module prefix.
 Use this for quick scripts and demonstrations.
 
 Example:
-    from northwind.drone import fly, set_speed, land
+    from Hoveryn.drone import fly, set_speed, land
     
     # Set hardware and speed
     set_speed(75)  # 75% throttle

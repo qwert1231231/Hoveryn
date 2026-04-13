@@ -1,5 +1,5 @@
 """
-Mission control module for Northwind drone library.
+Mission control module for Hoveryn drone library.
 Manages mission execution, safety, and hardware-aware flight sequencing.
 """
 

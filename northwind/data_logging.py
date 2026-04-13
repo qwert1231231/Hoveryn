@@ -1,5 +1,5 @@
 """
-Data logging module for Northwind drone library.
+Data logging module for Hoveryn drone library.
 Handles flight data logging, export, and cloud transmission.
 """
 

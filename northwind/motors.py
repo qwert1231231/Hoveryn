@@ -1,5 +1,5 @@
 """
-Motor control module for Northwind drone library.
+Motor control module for Hoveryn drone library.
 Provides PWM speed control, hardware device profiles, and multi-motor safety.
 """
 

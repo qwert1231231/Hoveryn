@@ -1,4 +1,4 @@
-"""Hardware abstraction layer for Northwind drone systems."""
+"""Hardware abstraction layer for Hoveryn drone systems."""
 
 from typing import Dict, List, Optional
 

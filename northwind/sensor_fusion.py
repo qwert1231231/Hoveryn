@@ -1,4 +1,4 @@
-"""Sensor fusion for GPS and IMU in Northwind."""
+"""Sensor fusion for GPS and IMU in Hoveryn."""
 
 from typing import Dict, Tuple
 
